@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubernetes Verileri</title>
+    <!-- Bootstrap CSS ve kendi stil dosyamız -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans+Condensed:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Kubernetes Verileri</h1>
+
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Namespaces</h2>
+                <ul class="list-group">
+                    {% for ns in namespaces %}
+                    <li>{{ ns.metadata.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h2>Pods</h2>
+                <ul class="list-group">
+                    {% for pod in pods %}
+                    <li>{{ pod.metadata.namespace }} - {{ pod.metadata.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h2>Deployments</h2>
+                <ul class="list-group">
+                    {% for deploy in deployments %}
+                    <li>{{ deploy.metadata.namespace }} - {{ deploy.metadata.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h2>ReplicaSets</h2>
+                <ul class="list-group">
+                    {% for rs in replica_sets %}
+                    <li class="list-group-item">{{ rs.metadata.namespace }} - {{ rs.metadata.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h2>Services</h2>
+                <ul class="list-group">
+                    {% for svc in services %}
+                    <li class="list-group-item">{{ svc.metadata.namespace }} - {{ svc.metadata.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap ve JQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

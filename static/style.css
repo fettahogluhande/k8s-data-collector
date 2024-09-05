@@ -1,0 +1,59 @@
+/* Genel sayfa ayarları */
+body {
+    font-family: "Reddit Sans Condensed", sans-serif;
+    background-color: #f4f7f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ana başlık stilleri */
+h1 {
+    color: #343a40;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2.5em;
+}
+
+/* Listelerin genel görünümü */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Her bölüm için başlık */
+h2 {
+    color: #007bff;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+/* Container düzeni */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Her sütunun görünümü */
+.col-md-4 {
+    margin-bottom: 20px;
+}
+
+/* Liste öğeleri için hover efekti */
+li:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
